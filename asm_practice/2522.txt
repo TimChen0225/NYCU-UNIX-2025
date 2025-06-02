@@ -1,0 +1,16 @@
+(base) timchen@chentinuandeMBP asm_practice % nc up.zoolab.org 2522
+ul+lu: convert the alphabet in CH from upper to lower or from lower to upper
+======
+* BASEADDR rsi = 0x556000, DATAADDR = BASEADDR + 0x200000
+======
+Enter your codes: (type 'done:' when done)
+
+cmp ch,'Z'
+jle upper
+sub ch,0x20
+jmp end
+
+upper:
+add ch, 0x20
+
+end:

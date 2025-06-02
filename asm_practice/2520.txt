@@ -1,0 +1,10 @@
+(base) timchen@chentinuandeMBP asm_practice % nc up.zoolab.org 2520
+swapreg: swap the values in RAX and RBX
+======
+* BASEADDR rsi = 0x481000, DATAADDR = BASEADDR + 0x200000
+======
+Enter your codes: (type 'done:' when done)
+
+mov rcx,rax
+mov rax,rbx
+mov rbx,rcx

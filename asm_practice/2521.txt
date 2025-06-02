@@ -1,0 +1,13 @@
+(base) timchen@chentinuandeMBP asm_practice % nc up.zoolab.org 2521
+tolower: convert the single character in val1 to uppercase and store in val2
+======
+* BASEADDR rsi = 0x486000, DATAADDR = BASEADDR + 0x200000
+      val1 @ 0x686000-686001
+      val2 @ 0x686001-686002
+======
+Enter your codes: (type 'done:' when done)
+
+add rsi, 0x200000
+mov al, byte ptr [rsi]
+sub al, 0x20
+mov byte ptr [rsi + 1], al

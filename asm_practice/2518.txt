@@ -1,0 +1,56 @@
+(base) timchen@chentinuandeMBP asm_practice % nc up.zoolab.org 2518
+recur: implement a recursive function
+
+   r(n) = 0, if n <= 0
+        = 1, if n == 1
+        = 2*r(n-1) + 3*r(n-2), otherwise
+   
+   please call r(19) and store the result in RAX
+======
+* BASEADDR rsi = 0x565000, DATAADDR = BASEADDR + 0x200000
+======
+Enter your codes: (type 'done:' when done)
+
+mov rdi, 16        ; 計算 r(16)
+call rfunc
+jmp end
+
+rfunc:
+    cmp rdi, 0
+    jle .ret_zero
+
+    cmp rdi, 1
+    je .ret_one
+
+    ; -- 保存參數
+    push rdi
+
+    ; -- 計算 r(n - 1)
+    dec rdi
+    call rfunc
+    imul rax, rax, 2      ; rax = 2 * r(n - 1)
+    pop rdi
+    push rax              ; push 結果
+
+    push rdi
+    sub rdi, 2
+    call rfunc
+    imul rax, rax, 3      ; rax = 3 * r(n - 2)
+
+    ; -- 拿回 r(n - 1)
+    pop rdi
+    pop rcx               ; rcx = 2 * r(n - 1)
+    add rax, rcx          ; rax = rcx + rax
+
+    ret
+
+.ret_zero:
+    mov rax, 0
+    ret
+
+.ret_one:
+    mov rax, 1
+    ret
+
+end:
+done:

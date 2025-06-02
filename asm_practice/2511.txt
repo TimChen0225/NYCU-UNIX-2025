@@ -1,0 +1,16 @@
+(base) timchen@chentinuandeMBP asm_practice % nc up.zoolab.org 2511
+math2: signed arithmetic
+        eax = (-var1 * var2) + var3
+======
+* BASEADDR rsi = 0x414000, DATAADDR = BASEADDR + 0x200000
+      var1 @ 0x614000-614004
+      var2 @ 0x614004-614008
+      var3 @ 0x614008-61400c
+======
+Enter your codes: (type 'done:' when done)
+
+add rsi, 0x200000
+mov eax, 0
+sub eax, [rsi]
+mul dword ptr [rsi + 4]
+add eax, [rsi + 8]

@@ -1,0 +1,46 @@
+(base) timchen@chentinuandeMBP asm_practice % nc up.zoolab.org 2517
+posneg: test if registers are positive or negative.
+        if ( eax >= 0 ) { var1 = 1 } else { var1 = -1 }
+        if ( ebx >= 0 ) { var2 = 1 } else { var2 = -1 }
+        if ( ecx >= 0 ) { var3 = 1 } else { var3 = -1 }
+        if ( edx >= 0 ) { var4 = 1 } else { var4 = -1 } 
+======
+* BASEADDR rsi = 0x45b000, DATAADDR = BASEADDR + 0x200000
+      var1 @ 0x65b000-65b004
+      var2 @ 0x65b004-65b008
+      var3 @ 0x65b008-65b00c
+      var4 @ 0x65b00c-65b010
+======
+Enter your codes: (type 'done:' when done)
+
+add rsi, 0x200000
+
+cmp eax,0
+jge .a
+mov dword ptr [rsi], -1
+jmp ab
+.a:
+mov dword ptr [rsi], 1
+
+ab:
+cmp ebx,0
+jge .b
+mov dword ptr [rsi+4], -1
+jmp bc
+.b:
+mov dword ptr [rsi+4], 1
+
+bc:
+cmp ecx,0
+jge .c
+mov dword ptr [rsi+8], -1
+jmp cd
+.c:
+mov dword ptr [rsi+8], 1
+
+cd:
+cmp edx,0
+jge .d
+mov dword ptr [rsi+12], -1
+.d:
+mov dword ptr [rsi+12], 1

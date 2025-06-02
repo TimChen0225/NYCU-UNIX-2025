@@ -1,0 +1,14 @@
+(base) timchen@chentinuandeMBP asm_practice % nc up.zoolab.org 2519
+swapmem: swap the values in val1 and val2
+======
+* BASEADDR rsi = 0x44c000, DATAADDR = BASEADDR + 0x200000
+      val1 @ 0x64c000-64c008
+      val2 @ 0x64c008-64c010
+======
+Enter your codes: (type 'done:' when done)
+
+add rsi, 0x200000
+mov rax, [rsi]
+mov rbx, [rsi+8]
+mov [rsi], rbx
+mov [rsi+8], rax

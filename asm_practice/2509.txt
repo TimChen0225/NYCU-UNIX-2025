@@ -1,0 +1,30 @@
+(base) timchen@chentinuandeMBP asm_practice % nc up.zoolab.org 2509
+loop15:
+        str1 is a string contains 15 lowercase and uppercase alphbets.
+        implement a loop to convert all alplabets to lowercase,
+        and store the result in str2.
+======
+* BASEADDR rsi = 0x5d0000, DATAADDR = BASEADDR + 0x200000
+      str1 @ 0x7d0000-7d0010
+      str2 @ 0x7d0010-7d0020
+======
+Enter your codes: (type 'done:' when done)
+
+add rsi, 0x200000
+mov r8, rsi       ; r8 = str1
+mov r9, rsi       ; r9 = str2
+add r9, 0x10
+mov ecx, 15             
+
+.loop:
+    mov al, byte ptr [r8]   
+    cmp al, 0x61
+    jge .copy                 
+    add al, 0x20             
+
+.copy:
+    mov byte ptr [r9], al   
+    inc r8
+    inc r9
+    dec ecx
+    jnz .loop                

@@ -1,0 +1,18 @@
+math3: 32-bit unsigned arithmetic
+        var4 = (var1 * 5) / (var2 - 3)
+        note: overflowed part should be truncated
+======
+* BASEADDR rsi = 0x5be000, DATAADDR = BASEADDR + 0x200000
+      var1 @ 0x7be000-7be004
+      var2 @ 0x7be004-7be008
+      var4 @ 0x7be008-7be00c
+======
+Enter your codes: (type 'done:' when done)
+
+add rsi, 0x200000
+mov eax, [rsi]
+imul eax,eax,5
+mov ebx, [rsi + 4]
+add ebx, 3
+div ebx
+mov [rsi + 8], eax

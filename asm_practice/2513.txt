@@ -1,0 +1,33 @@
+(base) timchen@chentinuandeMBP asm_practice % nc up.zoolab.org 2513
+math4: 32-bit signed arithmetic
+        var4 = (var1 * -5) / (-var2 % var3)
+        note: overflowed part should be truncated
+======
+* BASEADDR rsi = 0x50e000, DATAADDR = BASEADDR + 0x200000
+      var1 @ 0x70e000-70e004
+      var2 @ 0x70e004-70e008
+      var3 @ 0x70e008-70e00c
+      var4 @ 0x70e00c-70e010
+======
+Enter your codes: (type 'done:' when done)
+
+add rsi, 0x200000
+
+; ----------- compute (-var2 % var3) ----------
+mov eax, [rsi + 4]       ; eax = var2
+neg eax                  ; eax = -var2
+cdq                      ; sign extend eax → edx:eax
+idiv dword ptr [rsi + 8] ; idiv var3 → edx = remainder
+mov ebx, edx             ; ebx = (-var2 % var3)
+
+; ----------- compute (var1 * -5) -------------
+mov eax, [rsi]           ; eax = var1
+imul eax, eax, -5        ; eax = var1 * -5
+cdq                      ; sign extend for idiv
+
+idiv ebx                 ; eax = (var1 * -5) / remainder
+mov [rsi + 12], eax      ; store var4
+done:
+
+note:
+要加cdq，作用是sign extend eax → edx:eax
