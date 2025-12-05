@@ -1,0 +1,1 @@
+savedcmd_/home/timchen/lab2/cryptomod/Module.symvers :=  scripts/mod/modpost -M        -o /home/timchen/lab2/cryptomod/Module.symvers -T /home/timchen/lab2/cryptomod/modules.order -i Module.symvers -e 

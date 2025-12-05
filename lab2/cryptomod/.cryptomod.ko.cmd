@@ -1,0 +1,1 @@
+savedcmd_/home/timchen/lab2/cryptomod/cryptomod.ko := ld -r -m elf_x86_64 -z noexecstack --no-warn-rwx-segments --build-id=sha1  -T scripts/module.lds -o /home/timchen/lab2/cryptomod/cryptomod.ko /home/timchen/lab2/cryptomod/cryptomod.o /home/timchen/lab2/cryptomod/cryptomod.mod.o;  make -f ./arch/x86/Makefile.postlink /home/timchen/lab2/cryptomod/cryptomod.ko

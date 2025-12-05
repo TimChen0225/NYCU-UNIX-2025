@@ -1,0 +1,39 @@
+[load_file][tid=139688014776000] opening file: wwwroot///index.html
+[load_file][tid=139688004290240] opening file: password.txt
+[load_file][tid=139687993804480] opening file: wwwroot///index.html
+[load_file][tid=139687983318720] opening file: password.txt
+[load_file][tid=139687872169664] opening file: password.txt
+[load_file][tid=139687903626944] opening file: wwwroot///index.html
+[load_file][tid=139687893141184] opening file: password.txt
+[load_file][tid=139687882655424] opening file: wwwroot///index.html
+[load_file][tid=139687993804480] stat size = 31
+[load_file][tid=139687983318720] stat size = 4
+[load_file][tid=139688014776000] stat size = 31
+[load_file][tid=139687893141184] stat size = 4
+[load_file][tid=139687872169664] stat size = 4
+[load_file][tid=139688004290240] stat size = 4
+[load_file][tid=139687882655424] stat size = 31
+[load_file][tid=139687903626944] stat size = 31
+[load_file][tid=139688014776000] read 31 bytes, preview: <h1>Hello from index.html</h1>.
+[load_file][tid=139687882655424] read 31 bytes, preview: <h1>Hello from index.html</h1>.
+[load_file][tid=139687893141184] read 4 bytes, preview: abcd
+[load_file][tid=139687861683904] opening file: wwwroot///index.html
+[load_file][tid=139687851198144] opening file: password.txt
+[load_file][tid=139687903626944] read 31 bytes, preview: <h1>Hello from index.html</h1>.
+[load_file][tid=139687983318720] read 4 bytes, preview: abcd
+[load_file][tid=139688004290240] read 4 bytes, preview: abcd
+[load_file][tid=139687993804480] read 31 bytes, preview: <h1>Hello from index.html</h1>.
+[load_file][tid=139687872169664] read 4 bytes, preview: abcd
+[load_file][tid=139687861683904] stat size = 31
+[load_file][tid=139687851198144] stat size = 4
+[load_file][tid=139687851198144] read 4 bytes, preview: ....
+[load_file][tid=139687861683904] read 31 bytes, preview: <h1>Hello from index.html</h1>.
+[load_file][tid=139687851198144] opening file: wwwroot//secret/FLAG.txt
+[load_file][tid=139687851198144] stat size = 38
+[load_file][tid=139687851198144] read 38 bytes, preview: FLAG{Hello World~~ I'm a test flag!!!}
+[load_file][tid=139687769409216] opening file: wwwroot///index.html
+[load_file][tid=139687769409216] stat size = 31
+[load_file][tid=139687769409216] read 31 bytes, preview: <h1>Hello from index.html</h1>.
+[load_file][tid=139687758923456] opening file: password.txt
+[load_file][tid=139687758923456] stat size = 4
+[load_file][tid=139687758923456] read 4 bytes, preview: abcd
